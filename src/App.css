@@ -2,7 +2,27 @@ body {
   font-size: calc(10px + 2vmin);
   padding: 0 2em;
 }
+.productLine {
+  display: flex;
+  flex-direction: row;
+}
+.productLine div {
+  flex: 1;
+}
 
+.note {
+  color: #a21212;
+  font-size: smaller;
+}
+.categoryNote {
+  padding: 0 0 0.5em 0;
+}
+.productNote {
+  padding: 0 1.5em 0.5em 0;
+}
+.productSize {
+  font-size: 0.6em;
+}
 /*.App {*/
 /*  text-align: center;*/
 /*}*/

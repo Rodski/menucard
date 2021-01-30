@@ -1,37 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {Category} from "./Components/category";
 
 function App() {
+    const PRODUCTS_DATA = [
+        {
+            name: "drank",
+            products: [
+                {name: "cola", price: 2.0},
+                {name: "water", price: 1.5},
+                {name: "bier", price: 2.5, size: 25},
+                {name: "bier", price: 2.5, size: 33},
+                {name: "wijn", price: 2.0}]
+        },
+        {
+            name: "eten",
+            note: "een klein hapje voor de snelle honger",
+            products: [
+                {name: "chips", price: 7.0, note: "paprika of zout"},
+                {name: "olijven", price: 12.0, note: "zwart en groen"},
+                {name: "kaas", price: 12.0, note: "mix jonge en oude blokjes"},
+                {name: "salami", price: 12.0},
+                {name: "hamburger", price: 12.0, note: "niet na 22:00"},
+                {name: "pizza", price: 12.0, note: "niet na 22:00"}
+            ]
+        }
+    ];
     return (
-        <div className="App">
-            <header className="App-header">
-                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
-                {/*<p>*/}
-                {/*  Edit <code>src/App.js</code> and save to reload.*/}
-                {/*</p>*/}
-                {/*<a*/}
-                {/*  className="App-link"*/}
-                {/*  href="https://reactjs.org"*/}
-                {/*  target="_blank"*/}
-                {/*  rel="noopener noreferrer"*/}
-                {/*>*/}
-                {/*  Learn React*/}
-                {/*</a>*/}
-            </header>
-            <body>
-            <div className="root">
-                <div>
-                    <h1>Menu</h1>
-                    <h1>cola</h1>
-                    <h1>water</h1>
-                    <h1>bier</h1>
-                    <h1>wijn</h1>
-                </div>
-            </div>
-
-            </body>
+        <div>
+            <h1>Menu</h1>
+            <div>{PRODUCTS_DATA.map((c) => <Category key={c.name} category={c}/>)}</div>
         </div>
     );
 }
+
 
 export default App;
